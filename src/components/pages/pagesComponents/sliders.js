@@ -33,12 +33,12 @@ const Slider=()=>{
     },
     {
       name:"Bed cover",
-      img:img5,
+      img:img4,
       seller:"Ahmad"
     },
     {
       name:"Pj set",
-      img:img4,
+      img:img5,
       seller:"Ahmad"
     },
     {
@@ -65,7 +65,7 @@ return(
          productData?.map((data,index)=>(
 <Item style={index==0?{marginLeft:"0px",padding:"0px"}:{marginLeft:"15px"}}>
 <div style={{maxHeight:"210px"}}>
-<img src={data?.img} width="100%" height="210px" className='pb-2' max-width="150px" alt="Category 1" style={{maxHeight:"210px",objectFit:"contain"}}/>
+<img src={data?.img} width="100%" height="210px" className='pb-2' max-width="150px" alt="Category 1" style={{maxHeight:"210px",objectFit:"contain",minHeight:"210px"}}/>
 </div>
 <div class="px-2">
  <p class="mt-3 product_Name">
