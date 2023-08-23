@@ -64,7 +64,7 @@ const Footer = () => {
                 <div className="col-lg-6 col-md-6 col-10 m-md-0 m-auto d-flex flex-column align-items-end logo">
                     <img src={footer} alt="logo" width="150px"/>
                     <p className="mt-3">Got Question? Call us 24/7</p>
-                    <h1><a href="">+92-21-111-444-111</a></h1>
+                    <h1><a href="">+1 (786) 544-6956</a></h1>
                 </div>
             </div>
         </div>
