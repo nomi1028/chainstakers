@@ -1,7 +1,13 @@
 import Carousel from "react-elastic-carousel";
 import Item from "./Item";
 import "../../styles/main.css"
-import cartItem3 from "../../assests/png/cat5.jpg"
+
+import img1 from "../../assests/png/shirt-men.jpeg"
+import img2 from "../../assests/png/Puffercoat.jpeg"
+import img3 from "../../assests/png/USAflagbadge.jpeg"
+import img4 from "../../assests/png/bedcover.jpeg"
+import img5 from "../../assests/png/pjset.jpeg"
+import { useState } from "react";
 
 
 
@@ -19,63 +25,94 @@ const breakPoints = [
     { width: 2000, itemsToShow: 8 },
   ];
 const Slider=()=>{
+  const [productData,setProductData]=useState([
+    {
+      name:"Puffer jacket",
+      img:img2,
+      seller:"Nouman"
+    },
+    {
+      name:"Bed cover",
+      img:img5,
+      seller:"Ahmad"
+    },
+    {
+      name:"Pj set",
+      img:img4,
+      seller:"Ahmad"
+    },
+    {
+      name:"Men T-shirt",
+      img:img1,
+      seller:"Ali"
+    },
+    {
+      name:"USA flag badge",
+      img:img3,
+      seller:"Nouman",
+      seller:"Umer"
+    },
+   
+   
+    
+  ])
 return(
     <>
          <div  className='sliderArrow' >
         
-         <Carousel breakPoints={breakPoints}>
-        {
-          [1,2,3,4,5,6,7,8,9,10,11].map((data,index)=>(
+        <Carousel breakPoints={breakPoints}>
+       {
+         productData?.map((data,index)=>(
 <Item style={index==0?{marginLeft:"0px",padding:"0px"}:{marginLeft:"15px"}}>
- <div >
- <img src={cartItem3} width="100%" height="210px" className='pb-2' max-width="150px" alt="Category 1" />
+<div style={{maxHeight:"210px"}}>
+<img src={data?.img} width="100%" height="210px" className='pb-2' max-width="150px" alt="Category 1" style={{maxHeight:"210px",objectFit:"contain"}}/>
+</div>
+<div class="px-2">
+ <p class="mt-3 product_Name">
+   {data?.name}
+ </p>
+ <div class="product_price_list">
+   <span class="prduct_Price">USD 17.18</span>
+   <span class="prduct_Unit">Per kg</span>
  </div>
- <div class="px-2">
-  <p class="mt-3 product_Name">
-    Product Name
-  </p>
-  <div class="product_price_list">
-    <span class="prduct_Price">USD 17.18</span>
-    <span class="prduct_Unit">Per kg</span>
-  </div>
-  <span class="product_Quantity">5 min quantity</span>
-  <div>
-    <span className="seller_heading">
-      Seller based in:
-    </span>
+ <span class="product_Quantity">5 min quantity</span>
+ <div>
+   <span className="seller_heading">
+     Seller based in:
+   </span>
+  
+   <span className="seller_detail_city">
+     Islamabad
+   </span>
    
-    <span className="seller_detail_city">
-      Islamabad
-    </span>
-    
-  </div>
-  <div>
-    <span className="seller_heading">
-      Seller :
-    </span>
-    <span className="seller_detail">
-     Nouman Azeem
-    </span>
-  </div>
-  <div>
-    <span className="seller_heading">
-      Store :
-    </span>
-    <span className="seller_detail">
-      N.Cloths
-    </span>
-  </div>
+ </div>
+ <div>
+   <span className="seller_heading">
+     Seller :
+   </span>
+   <span className="seller_detail">
+   {data?.seller}
+   </span>
+ </div>
+ <div>
+   <span className="seller_heading">
+     Store :
+   </span>
+   <span className="seller_detail">
+     N.Cloths
+   </span>
+ </div>
 </div>
 
 
 </Item>
-          ))
-        }
+         ))
+       }
+       
         
-         
-           
+          
 </Carousel>
-      </div>
+     </div>
     </>
 )
 
